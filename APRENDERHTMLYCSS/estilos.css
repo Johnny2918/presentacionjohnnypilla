@@ -1,0 +1,426 @@
+/*SIEMPR PERO SIEMPRE VA ESTO JUNTO CON EL BODY*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+
+/*EL HEADER*/
+header{
+    width: 100%;
+    height: 650px;
+    background-image: url(Skewed.png);
+    /* controla si la imagen de fondo establecida en un 
+    elemento se mueve o permanece fija */
+    background-attachment: fixed;
+    /*Centra la imagen*/
+    background-position: center;
+    /*No pierda la forma al estirar la imagen los pixeles se vea bien*/
+    background-size: cover;
+    /*Para que se posicione dentro del elemento*/
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    
+}
+
+header .textos{
+    margin-top: 152px;
+}
+
+header .titulo{
+    font-size: 85px;
+}
+
+header .subtitulo{
+    font-size: 42px;
+    font-weight: 300;
+    margin-bottom: 32px;
+}
+
+header .boton {
+    /*se comporta como si fuera de bloque, pero respecto a los
+     elementos que la rodean es una caja en línea.lo que permite 
+     por ejemplo establecerle un tamaño mediante la propiedad width*/
+    display: inline-block;
+    padding: 6px;
+    width: 128px;
+    border: 1px solid #fff;
+    color:#fff;
+    /*Tamaño de Letra*/
+    font-size: 19px;
+    text-align: center;
+    /*Quitar el subrayado*/
+    text-decoration: none;
+    /*Darle el borde redondeado*/
+    border-radius: 16px;
+}
+.sesgoabajo{
+    /*Va combinado con el FIXED*/
+    /*Si un elemento con position: absolute; no tiene ancestros posicionados, 
+    usará el elemento body del documento, y se seguirá moviendo al hacer scroll en la página. 
+    Recuerda, un elemento "posicionado" es aquel cuyo valor es cualquiera excepto static.*/
+    position: absolute;
+     /*indica el orden de un elemento posicionado y sus descendientes. 
+     Cuando varios elementos se superponen, los elementos con mayor valor z-index cubren aquellos con menor valor*/ 
+    z-index: 10;
+    bottom: 0;
+    left: 0;
+    /*Para darle el efecto a la imagen del HEADER como de un sesgo*/
+    border-width: 0 0 35vh 100vw;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent ;
+}
+.sesgoarriba{
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*Para darle el efecto a la imagen del HEADER como de un sesgo*/
+    border-width: 35vh 100vw 0 0 ;
+    border-style: solid;
+    border-color: #fff transparent transparent  transparent ;
+
+}
+/*Para el contenedor de Sobre Nostros, Nuestro Equpo, Nuetros Cliente,Footer*/
+.contenedor{
+    width: 90%;
+    /*Maximo el ancho de 1000px*/
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    padding: 52px 0;
+}
+.sobre-nosotros{
+    text-align: center;
+    font-size: 56px;
+    margin-bottom: 10px;
+    font-weight: 600;
+
+}
+/*Es donde dice Tirando condigo en la web*/
+.slogan{
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 24px;
+}
+/*Esto es para el parrafo de debajo de Tirando codigo en la web*/
+.parrafo{
+    margin-bottom: 13px;
+    font-weight: 300;
+    text-align: justify;
+    /*espacio entre líneas base de texto*/
+    line-height: 24px;
+    color: rgb(24, 16, 16);
+}
+
+/*Para el boton de abajo del parrafo*/
+.acerca-de .boton {
+    /*se comporta como si fuera de bloque, pero respecto a los
+     elementos que la rodean es una caja en línea.lo que permite 
+     por ejemplo establecerle un tamaño mediante la propiedad width*/
+    display: inline-block;
+    padding: 6px;
+    width: 128px;
+    font-weight: 300;
+    border: 1px solid rgba(24, 16, 16, .7);
+    color:rgb(24, 16, 16);
+    /*Tamaño de Letra*/
+    font-size: 16px;
+    text-align: center;
+    /*Quitar el subrayado*/
+    text-decoration: none;
+    /*Darle el borde redondeado*/
+    border-radius: 16px;
+    margin-top: 24px;
+}
+
+/*SI COMENTAMOS SESGOARRIBA Y SESGOABAJO NOS DA OTRO EFECTO DE GALERIA
+DEPENDE DE COMO QUEREAMOS DEJARLO*/
+
+/*PARA LA GALERIA DE IMAGEN DE ABAJO DEL BOTON*/
+.galeria{
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    display: flex;
+    /*Se posiciona dentro de su elemento padre*/
+    position: relative;
+    flex-wrap: wrap;
+}
+/*LE ESTA DANDO TAMAÑO QUE VAN A OCUPAR LAS IMAGENES Y EL POSICIONAMIENTO
+POR QUE EN EL PADRE TIENE ABOSULETE Y VA COMBINADO CON RELATIVE*/
+.imagenes{
+    width: 20%;
+    height: 500px;
+    position: relative;
+    
+}
+/*SE ESTA ACOMODANDO AL SESGO DE ABAJO EN FORMA DE TRIANGO y YA EL
+TAMAÑO DE LAS IMAGENES*/
+.imagenes img{
+    width: 100%;
+    height: 100%;   
+    object-fit: cover; 
+}
+/*Este div esta en las imagenes PARA UBICAR EN LA MITAD ese EFECTO
+DE FONDO QUE LE DAMOS*/
+.encima{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(52, 73, 94, 0.815)
+}
+/*TAMAÑO A LAS PALABRA JOHNNY PILLA*/
+.encima h2{
+    position: relative;
+    top: 45%;
+    text-align: center;
+    color: #fff;
+}
+/*ESE DIV LO DECLARAMOS EN HTML DONDE DA ESE EFECTO DE SUBRAYADO*/
+
+.encima div{
+    /*COMO DIJE EL ABOSULTE SIEMPRE VA CON EL RELATIVE POR QUE
+    ES EL PADRE Y LOS HIJOS DEBEN E IR SIEMPRE CON RELATIVE
+    PARA LA UBICACION*/
+    position: relative;
+    /*block: Muestra los elementos en líneas independientes y acepta las propiedades width, height y margenes verticales.*/
+    display: block;
+    top: 46%;
+    width: 40%;
+    height: 5px;
+    background: #fff;
+    /*Para que lo centre automaticamente*/
+    margin: auto;
+}
+.cards{
+    width: 100%;
+    margin: auto;
+    /*Con el flex le hicimos que se acomeden en lina horizontal*/
+    display: flex;
+    /*Para que se acomeden en la parte de abajo si se llena
+    todo el width*/
+    flex-wrap: wrap;
+    /*Aqui ya se divide el espacio correctamente*/
+    justify-content: space-around;
+}
+/*Con esto formamos el tamaño de las 3 cartas*/
+.card{
+    margin: 20px 0;
+    width: 30%;
+    height: 250px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0px 0px 4px 0 rgba(52, 73, 94, 0.849);
+}
+/*Esto es para las imagenes de Color azul en el centro de la carta*/
+.cards img{
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+/*Para la imagen de fonod de nuestros clientes*/
+.fondo{
+    height: 900px;
+    position: relative;
+    background-image: url(fondo.png);
+    overflow: hidden;
+    /*Todo estos conceptos ya lo defini arriba*/
+    background-attachment: fixed;
+    background-position: center;
+    padding-top: 130px;
+}
+/*Le danos ese efecto de cortado en la parte de abajo*/
+.sesgoabajo-unico{
+   position: absolute;
+   z-index: 10;
+   bottom: 0;
+   left: 0;
+   border-width: 0 0 35vh 100vw;
+   border-style: solid;
+   border-color: transparent transparent #2c3e50 transparent ;
+}
+/*Para el titulo de Nuestros clientes y Conoce a algunos de nuestros*/
+.titulo-patrocinadores, .subtitulo-patrocinadores{
+    color: #fff;
+    text-align: center;
+
+}
+.titulo-patrocinadores{
+    font-size: 56px;
+    margin-top: 48px;
+}
+.subtitulo-patrocinadores{
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 64px;
+}
+
+/*Para la parte de la iMagen de jordan*/
+.clientes{
+    /*EL FLEX SIEMPRE AL PADRE*/
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 64px;
+    width: 100%;
+    justify-content: space-between;
+}
+.cliente{
+    width: 30%;
+}
+/*al momento de dar los valroes aqui ya se dividieron en 3 columnas
+por el displax flex*/
+.cliente img{
+    width: 100%;
+}
+
+footer{
+    background: #2c3e50;
+    height: auto;
+}
+/*Los titulos del formulario*/
+.titulo-footer, .subtitulo-footer{
+    color: #fff;
+    text-align: center; 
+    font-weight: 400;
+    font-size: 56px;
+}
+.subtitulo-footer{
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 64px;
+}
+/*al fromulario*/
+form{
+    /*Para que se ponga en linea horizonal con el Flex*/
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: auto;
+}
+input[type="text"], input[type="email"]{
+    display: inline-flex;
+    width: 48%;
+    padding: 13px;
+    border: none;
+    color: #fff;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: rgba(37, 37, 33, .7);
+    margin-bottom: 16px;
+    border-top: 1px solid rgba(37, 37, 33, .7);
+}
+/*al POSICIOANRSE EN LAS CAJAS DE TEXTO*/
+input[type="text"]:focus , input[type="email"]:focus, textarea:focus{
+    border-top: 5px solid rgba(255, 255, 255, 0.7);
+}
+textarea{
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 200px;
+    min-height: 200px;
+    background: rgba(37, 37, 33, .7);
+    padding: 13px;
+    border: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-bottom: 16px;
+}
+input[type="submit"]{
+    display: inline-block;
+    padding: 13px;
+    border: none;
+    color: #fff;
+    background: rgba(37, 37, 33, .7);
+    width: 96px;
+}
+
+@media screen and (max-width:900px){
+    /*Una carta del cliente se va a desplegar hacia abajo menor de 900px*/
+    .card{
+        width: 48%;
+    }
+}
+
+
+@media screen and (max-width:610px){
+    /*Una carta del cliente se va a desplegar hacia abajo menor de 900px*/
+    header .titulo{
+        font-size: 75px;
+    }
+    
+    header .textos{
+        margin-top: 75px;
+        
+    }
+    .none{
+        /*QUITAMOS LOS BORDERS BLANCOS DE LA GALERIA*/
+        display: none;
+        
+    }
+    .imagenes{
+        /*esto es para que se rellene todo el espaci*/
+        flex-grow: 1;
+    }
+    .card{
+        width: 90%;
+    }
+    .fondo{
+        height: auto;
+    }
+    .especial{
+        display: none;
+    }
+    /*LAS IMAGENES DE JORDAN ALEXANDRE*/
+    .cliente{
+        width: 90%;
+        height: 200px;
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (max-width:380px){
+    header .textos{
+        margin-top: 100px;
+
+    }
+    header .titulo{
+        font-size: 65px;
+    }
+    header .subtitulo{
+        font-size: 25px;
+        margin-bottom: 32px;
+    }
+    .sobre-nosotros{
+        font-size: 46px;
+    }
+    .slogan{
+        font-size: 20px;
+    }
+    .titulo-patrocinadores{
+        font-size: 46px;
+    }
+    .subtitulo-patrocinadores{
+        font-size: 20px;
+    }
+}
+
+
+
+
+
+
+
+
